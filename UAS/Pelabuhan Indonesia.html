@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Peta Keterjangkauan Layanan Fasilitas Kesehatan Mental di Kawasan Sleman dan Yogyakarta</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+  <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="css/leaflet-search.css">
+  <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+  <!-- Favicons -->
+  <link href="https://cdn-icons-png.flaticon.com/128/8/8176.png" rel="icon">
+  <link href="https://cdn-icons-png.flaticon.com/128/8/8176.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<style>
+  .container {
+margin: auto;
+padding: 5px;
+  }
+      #map {
+      border: 2px solid black;
+      height: 500px;
+      width: 95%;
+      margin: auto;
+      margin-bottom: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+      }
+      footer {
+      padding:10px 0;
+      background-color: gray;
+      color: #fff;
+      text-align: center;
+      font-family: 'Lucida Sans Unicode';
+      font-size: 17px;
+      margin-top: 10px;
+      }
+      h1 {
+      text-align: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      }
+      h6{
+      text-align: center;
+      color: #484444;
+      font-family: 'Lucida Sans Unicode';
+      font-size: 15px;
+      padding-bottom: 15px;
+      }
+      #legenda {
+      background-color: white;
+      border: 2px solid black;
+      padding: 10px;
+      width: 45%;
+      margin-left: 30px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular';
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+      }
+      #legenda table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+      #legenda td {
+      padding: 10px;
+      margin: auto;
+      }
+      iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        }
+  </style>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Layanan Faskes Mental di Sleman dan Yogyakarta</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="">Home</a></li>
+          
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h1 class="">Peta Layanan Fasilitas Kesehatan Mental di Kawasan Sleman dan Yogyakarta</h1>
+            <p>Pada visualisasi ini, kami menyajikan informasi tentang fasilitas kesehatan mental yang terdaftar di kawasan Sleman dan Yogyakarta dengan kategori klasifikasi jarak : Dekat, Sangat Dekat, Sedang, Jauh, dan Sangat Jauh. 
+              Fasilitas-fasilitas ini berperan penting dalam menyediakan layanan kesehatan mental di daerah ini, 
+              membantu masyarakat khususnya mahasiswa mendapatkan akses yang lebih baik terhadap perawatan yang mereka butuhkan.</p>
+              <tr> Untuk meminimalisir kasus ini, dibawah ini telah tercantum video cara menjaga kesehatan mental mahasiswa</tr>
+            <div class="d-flex">
+              <a id="get-started-btn" class="btn-getstarted" href="#map-section">Get Started</a>
+              <a href="https://youtu.be/nPq7sHNyKPI?si=4CRFe69PhqRFmLO8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img text-right"> <!-- Menambahkan kelas 'text-right' untuk membuat gambar bergeser ke kanan -->
+            <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-medical-hospital-building-hand-drawn-can-be-commercial-cartoon-element-hospitalhand-png-image_4048574.jpg" class="img-fluid animated" alt="" style="width: 400px; height: auto;"> <!-- Menambahkan properti gaya (style) untuk meningkatkan ukuran gambar menjadi dua kali lipat -->
+        </div>
+        
+        
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- ======= MAP Section ======= -->
+    <section id="map-section">
+      <div class="container">
+          <iframe src="https://dewimaharaniflorentina.github.io/UAS_PrakSIGWeb_QGIS/#11/-7.6906/110.3813"></iframe>
+                <div id="legenda" style="text-align: center;">
+    
+              <table style="width: 100%;">
+                  <tr>
+                      <td colspan="5">LEGENDA</td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/RS Umum.png" width="30px" height="30px"></td>
+                    <td><img src="images/RS Jiwa.png" width="30px" height="30px"></td>
+                    <td><img src="images/Puskesmas.png" width="30px" height="30px"></td>
+                    <td><img src="images/Biro Psikologi.png" width="30px" height="30px"></td>
+                  </tr>
+                  <tr>
+                    <td>RS Umum</td>
+                    <td>RS Jiwa</td>
+                    <td>Puskesmas</td>
+                    <td>Biro Psikologi</td>
+                  </tr>
+                </table>
+            </div>
+        </div>
+    
+  
+      <script src="js/qgis2web_expressions.js"></script>
+      <script src="js/leaflet.js"></script>
+      <script src="js/L.Control.Locate.min.js"></script>
+      <script src="js/leaflet.rotatedMarker.js"></script>
+      <script src="js/leaflet.pattern.js"></script>
+      <script src="js/leaflet-hash.js"></script>
+      <script src="js/Autolinker.min.js"></script>
+      <script src="js/rbush.min.js"></script>
+      <script src="js/labelgun.min.js"></script>
+      <script src="js/labels.js"></script>
+      <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+      <script src="js/leaflet-search.js"></script>
+      <script src="data/Pelabuhan_Indonesia_4.js"></script>
+      <script>
+      var highlightLayer;
+      function highlightFeature(e) {
+          highlightLayer = e.target;
+          highlightLayer.openPopup();
+      }
+      var map = L.map('map', {
+          zoomControl:true, maxZoom:28, minZoom:1
+      }).fitBounds([[-15.612417491214103,81.75958796181662],[15.75484472169618,149.3847070337361]]);
+      var hash = new L.Hash(map);
+      map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+      var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+      L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+      var bounds_group = new L.featureGroup([]);
+      function setBounds() {
+      }
+      map.createPane('pane_OSMStandard_0');
+      map.getPane('pane_OSMStandard_0').style.zIndex = 400;
+      var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          pane: 'pane_OSMStandard_0',
+          opacity: 1.0,
+          attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+          minZoom: 1,
+          maxZoom: 28,
+          minNativeZoom: 0,
+          maxNativeZoom: 19
+      });
+      layer_OSMStandard_0;
+      map.addLayer(layer_OSMStandard_0);
+      map.createPane('pane_GoogleMaps_1');
+      map.getPane('pane_GoogleMaps_1').style.zIndex = 401;
+      var layer_GoogleMaps_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+          pane: 'pane_GoogleMaps_1',
+          opacity: 1.0,
+          attribution: '',
+          minZoom: 1,
+          maxZoom: 28,
+          minNativeZoom: 0,
+          maxNativeZoom: 18
+      });
+      layer_GoogleMaps_1;
+      map.addLayer(layer_GoogleMaps_1);
+      map.createPane('pane_StamenWatercolor_2');
+      map.getPane('pane_StamenWatercolor_2').style.zIndex = 402;
+      var layer_StamenWatercolor_2 = L.tileLayer('http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
+          pane: 'pane_StamenWatercolor_2',
+          opacity: 1.0,
+          attribution: '',
+          minZoom: 1,
+          maxZoom: 28,
+          minNativeZoom: 0,
+          maxNativeZoom: 18
+      });
+      layer_StamenWatercolor_2;
+      map.addLayer(layer_StamenWatercolor_2);
+      map.createPane('pane_ESRIStandard_3');
+      map.getPane('pane_ESRIStandard_3').style.zIndex = 403;
+      var layer_ESRIStandard_3 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+          pane: 'pane_ESRIStandard_3',
+          opacity: 1.0,
+          attribution: '',
+          minZoom: 1,
+          maxZoom: 28,
+          minNativeZoom: 0,
+          maxNativeZoom: 18
+      });
+      layer_ESRIStandard_3;
+      map.addLayer(layer_ESRIStandard_3);
+      function pop_Pelabuhan_Indonesia_4(feature, layer) {
+          layer.on({
+              mouseout: function(e) {
+                  if (typeof layer.closePopup == 'function') {
+                      layer.closePopup();
+                  } else {
+                      layer.eachLayer(function(feature){
+                          feature.closePopup()
+                      });
+                  }
+              },
+              mouseover: highlightFeature,
+          });
+          var popupContent = '<table>\
+                  <tr>\
+                      <th scope="row">scalerank</th>\
+                      <td>' + (feature.properties['scalerank'] !== null ? autolinker.link(feature.properties['scalerank'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <th scope="row">featurecla</th>\
+                      <td>' + (feature.properties['featurecla'] !== null ? autolinker.link(feature.properties['featurecla'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <th scope="row">name</th>\
+                      <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <th scope="row">website</th>\
+                      <td>' + (feature.properties['website'] !== null ? autolinker.link(feature.properties['website'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <th scope="row">natlscale</th>\
+                      <td>' + (feature.properties['natlscale'] !== null ? autolinker.link(feature.properties['natlscale'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+              </table>';
+          layer.bindPopup(popupContent, {maxHeight: 400});
+      }
+  
+      function style_Pelabuhan_Indonesia_4_0(feature) {
+          switch(String(feature.properties['featurecla'])) {
+              case 'Port':
+                  return {
+              pane: 'pane_Pelabuhan_Indonesia_4',
+      rotationAngle: 0.0,
+      rotationOrigin: 'center center',
+      icon: L.icon({
+          iconUrl: 'https://cdn-icons-png.flaticon.com/128/8/8176.png',
+          iconSize: [19.0, 19.0]
+      }),
+              interactive: true,
+          }
+                  break;
+          }
+      }
+      map.createPane('pane_Pelabuhan_Indonesia_4');
+      map.getPane('pane_Pelabuhan_Indonesia_4').style.zIndex = 404;
+      map.getPane('pane_Pelabuhan_Indonesia_4').style['mix-blend-mode'] = 'normal';
+      var layer_Pelabuhan_Indonesia_4 = new L.geoJson(json_Pelabuhan_Indonesia_4, {
+          attribution: '',
+          interactive: true,
+      })
+  
+      </script>      
+    </section>
+    <!-- ======= MAP Section ======= -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Florentina Dewi M</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
